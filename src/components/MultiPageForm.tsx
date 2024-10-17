@@ -44,10 +44,12 @@ const MultiPageForm: React.FC = () => {
     const handleSubmit = (values: User) => {
         alert("Data Submitted")
         console.log("Data: ", values);
+        // const formData = new FormData;
+        // formData.append('Email', values.FirstName)
     };
 
     return (
-        <div className="container mt-5">
+        <div className="container border border-dark bg-secondary-subtle p-1 rounded mt-5">
             <Formik
                 initialValues={{
                     Email: "",
@@ -68,7 +70,7 @@ const MultiPageForm: React.FC = () => {
                 onSubmit={handleSubmit}
             >
                 {() => (
-                    <Form className="p-4 border rounded shadow-sm">
+                    <Form className="p-4 border border-secondary bg-light rounded shadow-sm">
                         {currentPage === 1 && (
                             <>
                                 <div className="mb-3">
@@ -76,7 +78,7 @@ const MultiPageForm: React.FC = () => {
                                     <Field
                                         type="email"
                                         name="Email"
-                                        className="form-control"
+                                        className="form-control btn btn-outline-secondary"
                                         placeholder="Enter your Email"
                                     />
                                     <ErrorMessage name="Email" component="div" className="text-danger" />
@@ -86,7 +88,7 @@ const MultiPageForm: React.FC = () => {
                                     <Field
                                         type="password"
                                         name="Password"
-                                        className="form-control"
+                                        className="form-control btn btn-outline-secondary"
                                         placeholder="**************"
                                     />
                                     <ErrorMessage name="Password" component="div" className="text-danger" />
